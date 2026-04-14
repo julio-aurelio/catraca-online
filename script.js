@@ -76,6 +76,18 @@ function mostrarLoading() {
     mensagemDiv.className = 'mensagem carregando';
 }
 
+// 🔥 ANIMAÇÃO DE LIMPAR DISPLAY (efeito fade out)
+function animarLimparDisplay() {
+    // Adiciona classe de fade-out no display
+    cpfDisplay.style.transition = 'opacity 0.3s ease';
+    cpfDisplay.style.opacity = '0';
+    
+    setTimeout(() => {
+        limparTudo();
+        cpfDisplay.style.opacity = '1';
+    }, 300);
+}
+
 // Mostrar mensagem de sucesso
 function mostrarSucesso(nome) {
     mensagemDiv.innerHTML = `
@@ -85,11 +97,17 @@ function mostrarSucesso(nome) {
     `;
     mensagemDiv.className = 'mensagem sucesso';
     
-    // Efeito visual
+    // Efeito visual no fundo
     document.body.style.backgroundColor = '#c6f6d5';
+    
+    // 🔥 ANIMAÇÃO: Limpa o display após sucesso
+    setTimeout(() => {
+        animarLimparDisplay();
+    }, 2000);
+    
     setTimeout(() => {
         document.body.style.backgroundColor = '';
-    }, 500);
+    }, 2500);
 }
 
 // Mostrar mensagem de erro
@@ -101,11 +119,17 @@ function mostrarErro(mensagem) {
     `;
     mensagemDiv.className = 'mensagem erro';
     
-    // Efeito visual
+    // Efeito visual no fundo
     document.body.style.backgroundColor = '#fed7d7';
+    
+    // 🔥 ANIMAÇÃO: Limpa o display após erro também
+    setTimeout(() => {
+        animarLimparDisplay();
+    }, 2000);
+    
     setTimeout(() => {
         document.body.style.backgroundColor = '';
-    }, 500);
+    }, 2500);
 }
 
 // Mostrar erro de conexão
@@ -116,6 +140,18 @@ function mostrarErroConexao() {
         <div style="margin-top: 5px; font-size: 0.9em;">Verifique sua conexão com a internet.</div>
     `;
     mensagemDiv.className = 'mensagem erro';
+    
+    // Efeito visual no fundo
+    document.body.style.backgroundColor = '#fed7d7';
+    
+    // 🔥 ANIMAÇÃO: Limpa o display após erro de conexão
+    setTimeout(() => {
+        animarLimparDisplay();
+    }, 2000);
+    
+    setTimeout(() => {
+        document.body.style.backgroundColor = '';
+    }, 2500);
 }
 
 // 🔥 FUNÇÃO PRINCIPAL: Validar CPF na API
@@ -150,10 +186,6 @@ async function validarAcesso() {
         
         if (data.acesso === true) {
             mostrarSucesso(data.nome);
-            // Opcional: limpar CPF após sucesso
-            setTimeout(() => {
-                limparTudo();
-            }, 3000);
         } else {
             mostrarErro(data.mensagem || 'Acesso negado!');
         }
