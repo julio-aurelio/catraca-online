@@ -1,0 +1,222 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background: #f5f5f5;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    background: white;
+    border-radius: 24px;
+    padding: 32px;
+    max-width: 700px;
+    width: 100%;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05), 0 1px 3px rgba(0,0,0,0.1);
+}
+
+/* Header */
+.header {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.header h1 {
+    font-size: 28px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 8px;
+}
+
+.header p {
+    font-size: 16px;
+    color: #666;
+}
+
+/* Display */
+.display {
+    background: #f8f9fa;
+    border-radius: 16px;
+    padding: 32px 24px;
+    margin-bottom: 32px;
+    text-align: center;
+    border: 1px solid #e9ecef;
+}
+
+.cpf-display {
+    font-size: 36px;
+    font-family: 'Courier New', 'Monaco', monospace;
+    letter-spacing: 4px;
+    color: #1a1a1a;
+    font-weight: 500;
+    word-break: break-all;
+}
+
+/* Teclado */
+.teclado {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.btn-num {
+    background: white;
+    color: #1a1a1a;
+    border: 1px solid #e9ecef;
+    padding: 24px;
+    font-size: 32px;
+    font-weight: 500;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    font-family: monospace;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.btn-num:active {
+    background: #f0f0f0;
+    transform: scale(0.97);
+}
+
+.btn-limpar, .btn-limpar-tudo {
+    background: #f8f9fa;
+    color: #dc3545;
+    border: 1px solid #e9ecef;
+    padding: 24px;
+    font-size: 28px;
+    font-weight: 500;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.btn-limpar:active, .btn-limpar-tudo:active {
+    background: #e9ecef;
+    transform: scale(0.97);
+}
+
+/* Botão Validar */
+.btn-validar {
+    background: #28a745;
+    color: white;
+    border: none;
+    padding: 24px;
+    font-size: 22px;
+    font-weight: 600;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    width: 100%;
+    margin-bottom: 24px;
+    letter-spacing: 1px;
+}
+
+.btn-validar:active {
+    background: #218838;
+    transform: scale(0.98);
+}
+
+/* Mensagem */
+.mensagem {
+    padding: 24px;
+    border-radius: 16px;
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 24px;
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.mensagem.sucesso {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.mensagem.erro {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.mensagem.carregando {
+    background: #e2e3e5;
+    color: #383d41;
+    border: 1px solid #d6d8db;
+}
+
+/* Info */
+.info {
+    text-align: center;
+    color: #6c757d;
+    font-size: 14px;
+    padding-top: 20px;
+    border-top: 1px solid #e9ecef;
+}
+
+.info p {
+    margin: 4px 0;
+}
+
+/* Loading spinner */
+.loading {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    border: 3px solid #e9ecef;
+    border-top: 3px solid #28a745;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    margin-right: 12px;
+    vertical-align: middle;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Ajustes para tablet */
+@media (min-width: 768px) {
+    .teclado {
+        gap: 20px;
+    }
+    
+    .btn-num, .btn-limpar, .btn-limpar-tudo {
+        padding: 28px;
+        font-size: 36px;
+    }
+    
+    .btn-validar {
+        padding: 28px;
+        font-size: 24px;
+    }
+    
+    .cpf-display {
+        font-size: 42px;
+    }
+}
+
+/* Feedback tátil */
+.btn-num, .btn-limpar, .btn-limpar-tudo, .btn-validar {
+    touch-action: manipulation;
+}
+
+/* Foco acessível */
+.btn-num:focus, .btn-limpar:focus, .btn-limpar-tudo:focus, .btn-validar:focus {
+    outline: 2px solid #28a745;
+    outline-offset: 2px;
+}

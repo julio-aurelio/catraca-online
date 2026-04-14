@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="theme-color" content="#28a745">
+    <title>Catraca Digital - Academia</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🏋️ Catraca Digital</h1>
+            <p>Digite seu CPF para acessar</p>
+        </div>
+
+        <div class="display">
+            <div class="cpf-display" id="cpfDisplay">__________</div>
+        </div>
+
+        <div class="teclado">
+            <button class="btn-num" data-num="1">1</button>
+            <button class="btn-num" data-num="2">2</button>
+            <button class="btn-num" data-num="3">3</button>
+            <button class="btn-num" data-num="4">4</button>
+            <button class="btn-num" data-num="5">5</button>
+            <button class="btn-num" data-num="6">6</button>
+            <button class="btn-num" data-num="7">7</button>
+            <button class="btn-num" data-num="8">8</button>
+            <button class="btn-num" data-num="9">9</button>
+            <button class="btn-limpar" id="btnLimpar">⌫</button>
+            <button class="btn-num" data-num="0">0</button>
+            <button class="btn-limpar-tudo" id="btnLimparTudo">C</button>
+        </div>
+
+        <button class="btn-validar" id="btnValidar">
+            VALIDAR ACESSO
+        </button>
+
+        <div class="mensagem" id="mensagem"></div>
+
+        <div class="info">
+            <p>Digite apenas os números do CPF</p>
+            <p>Exemplo: 11111111111</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
