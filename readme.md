@@ -30,5 +30,3 @@ Acesse a versão ao vivo do projeto:
 | **CSS3** | Estilização e transições suaves |
 | **HTML5** | Estruturação da interface |
 | **Vercel** | Hospedagem e deploy contínuo |
-
-## 📁 Estrutura do Projeto
