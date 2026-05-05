@@ -120,7 +120,7 @@ function mostrarErro(mensagem) {
     mensagemDiv.className = 'mensagem erro';
     
     // Efeito visual no fundo
-    document.body.style.backgroundColor = '#ffffff';
+    document.body.style.backgroundColor = '#f5f5f5';
     
     // 🔥 ANIMAÇÃO: Limpa o display após erro também
     setTimeout(() => {
